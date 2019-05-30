@@ -24,10 +24,10 @@ public class AuthController {
 
     @RequestMapping(value = "/auth/login", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(
-            String username,String password
+           // String username,String password
     ) throws AuthenticationException{
         //  @RequestBody JwtAuthenticationRequest authenticationRequest
-        final String token = authService.login(username,password);
+        final String token = authService.login();
 
         // Return the token
         return ResponseEntity.ok(new JwtAuthenticationResponse(token));
